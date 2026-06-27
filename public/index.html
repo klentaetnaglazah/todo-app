@@ -11,23 +11,38 @@
         <h1>Todo List</h1>
         
         <div class="add-todo-form">
-            <input type="text" id="titleInput" placeholder="Название задачи">
-            <input type="text" id="descInput" placeholder="Описание (необязательно)">
-            <select id="priorityInput">
-                <option value="low">Низкий</option>
-                <option value="medium" selected>Средний</option>
-                <option value="high">Высокий</option>
-            </select>
-            <button onclick="addTodo()">Добавить</button>
+            <div class="form-group">
+                <label for="titleInput">Название задачи</label>
+                <input type="text" id="titleInput" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="descInput">Описание (необязательно)</label>
+                <input type="text" id="descInput">
+            </div>
+            
+            <div class="form-group">
+                <label for="priorityInput">Приоритет</label>
+                <select id="priorityInput">
+                    <option value="low">Низкий</option>
+                    <option value="medium" selected>Средний</option>
+                    <option value="high">Высокий</option>
+                </select>
+            </div>
+            
+            <button type="button" id="addButton">Добавить</button>
         </div>
 
         <div class="controls">
             <div class="filters">
-                <button onclick="setFilter('all')" class="active">Все</button>
-                <button onclick="setFilter('active')">Активные</button>
-                <button onclick="setFilter('completed')">Выполненные</button>
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="active">Активные</button>
+                <button class="filter-btn" data-filter="completed">Выполненные</button>
             </div>
-            <input type="text" id="searchInput" placeholder="Поиск..." oninput="loadTodos()">
+            <div class="search-group">
+                <label for="searchInput">Поиск</label>
+                <input type="text" id="searchInput">
+            </div>
         </div>
 
         <div id="todosList"></div>
