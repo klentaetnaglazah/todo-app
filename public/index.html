@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        
+        <div class="add-todo-form">
+            <input type="text" id="titleInput" placeholder="Название задачи">
+            <input type="text" id="descInput" placeholder="Описание (необязательно)">
+            <select id="priorityInput">
+                <option value="low">Низкий</option>
+                <option value="medium" selected>Средний</option>
+                <option value="high">Высокий</option>
+            </select>
+            <button onclick="addTodo()">Добавить</button>
+        </div>
+
+        <div class="controls">
+            <div class="filters">
+                <button onclick="setFilter('all')" class="active">Все</button>
+                <button onclick="setFilter('active')">Активные</button>
+                <button onclick="setFilter('completed')">Выполненные</button>
+            </div>
+            <input type="text" id="searchInput" placeholder="Поиск..." oninput="loadTodos()">
+        </div>
+
+        <div id="todosList"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
