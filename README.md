@@ -17,3 +17,7 @@ npm install
 npm start
 ```
 Приложение будет доступно по адресу http://localhost:3000
+
+## Ссылка на деплой
+
+https://todo-app-production-8cf8.up.railway.app/
